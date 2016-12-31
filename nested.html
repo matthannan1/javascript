@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Change Me</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <h1>Some text</h1>
+        <script>
+            var justAVar = "I am Global";
+
+            function whereAreYou() {
+                var justAVar = "I am Local";
+
+                function inner() {
+                    return justAVar;
+                }
+                return inner;
+            }
+
+            var innerFunction = whereAreYou();
+            var result = innerFunction();
+            alert(result);
+
+            function makeCounter() {
+                var count = 0;
+
+                function counter() {
+                    count = count + 1;
+                    return count;
+                }
+                return counter;
+            }
+            var doCount = makeCounter();
+            alert(doCount());
+            alert(doCount());
+            alert(doCount());
+
+            function makeTimer(doneMessage, n) {
+                setTimeout(function () {
+                    alert(doneMessage);
+                }, n);
+                doneMessage = "Ouch!";
+            }
+            makeTimer("Cookies are done!", 1000);
+
+
+
+
+        </script>
+    </body>
+</html>
+
+

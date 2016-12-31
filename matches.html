@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>DNA Matches</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //From FamilyFinder Matches File
+            function Match(fullName, matchDate, relationshipRange, suggestedRelationship, sharedCM, longestBlock,
+                    knownRelationship, emailAddress, yDNAHaplogroup, mtDNAHaplogroup, id, notes, label, icwArray,
+                    cbArray) {
+                this.fullName = fullName;
+                this.matchDate = matchDate;
+                this.relationshipRange = relationshipRange;
+                this.suggestedRelationship = suggestedRelationship;
+                this.sharedCM = sharedCM;
+                this.longestBlock = longestBlock;
+                this.knownRelationship = knownRelationship;
+                this.emailAddress = emailAddress;
+                this.yDNAHaplogroup = yDNAHaplogroup;
+                this.mtDNAHaplogroup = mtDNAHaplogroup;
+                this.id = id;
+                this.notes = notes;
+                this.label = label;
+                this.icwArray = [];
+                this.cbArray = [];
+            }
+            
+            //Loop through FFM.csv file and create all objects
+            var match = new Match("M F Trangsrud", "8/12/2013 0:00", "5th Cousin - Remote Cousin", "", "55.42", "9.52",
+                    "", "dna@trangsrud.net", "R-M17", "J1b1a1b", "100025", "", "M F Trangsrud");
+
+            document.write("Full Name: " + match.fullName);
+            document.write("<br/>");
+            document.write("Label: " + match.label);
+            document.write("<br/>");
+            document.write("ID: " + match.id);
+            document.write("<br/>");
+            document.write("Email: " + match.emailAddress);
+            document.write("<br/>");
+            document.write("Known Relationship: " + match.knownRelationship);
+            document.write("<br/>");
+            document.write("Relationship Range: " + match.relationshipRange);
+            document.write("<br/>");
+            document.write("Suggested Relationship: " + match.suggestedRelationship);
+            document.write("<br/>");
+            document.write("Shared cM: " + match.sharedCM);
+            document.write("<br/>");
+            document.write("Longest Block: " + match.longestBlock);
+            document.write("<br/>");
+            document.write("Y-DNA: " + match.yDNAHaplogroup);
+            document.write("<br/>");
+            document.write("mtDNA: " + match.mtDNAHaplogroup);
+            document.write("<br/>");
+            document.write("ICW: " + match.icwArray);
+            document.write("<br/>");
+            document.write("Chromosome Browser: " + match.cbArray);
+            document.write("<br/>");
+            document.write("Match Date: " + match.matchDate);
+            document.write("<br/>");
+            document.write("Notes: " + match.notes);
+            document.write("<br/>");
+            document.write("<br/>");
+            
+            
+            
+            Match.prototype.lbCheck = function() {
+                if (this.longestBlock<15) {
+                    document.write(this.fullName + " does not share enough DNA to be worth looking at.");
+                } else {
+                    document.write(this.fullName + " is worth spending some time on.");
+                }
+            };
+            
+           
+            match.lbCheck();
+            
+            
+                     
+            
+            // A way to rename the object with the ID string?
+            //var match.id = match;
+
+        </script>
+
+    </head>
+    <body>
+        <h1>DNA Matches</h1><p>
+        <div id="match"></div>
+    </body>
+</html>
