@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pirates Booty</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = init;
+            function init() {
+                var map = document.getElementById("map");
+                // Handler
+                map.onmousemove = showCoords;
+            }
+            function showCoords(eventObj) {
+                var coords = document.getElementById("coords");
+                var x = eventObj.clientX;
+                var y = eventObj.clientY;
+                coords.innerHTML = "Map coordinates: " + x + ", " + y;
+            }
+        </script>
+    </head>
+
+    <body>
+        <img id = "map" src="map.jpg" alt="Map">
+        <p id="coords">Move mouse to find coordinates...</p>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Recursion</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <h1>Recursion</h1>
+        Recursive function: calls itself from within itself.</br>
+        Takes int n </br>
+        If n = 0, return true (checking for evenness)</br>
+        If n = 1, return false.</br>
+        If n < 0, return -n. That is, if -1, return 1, so false.</br>
+        Final else does the heavy lifting.</br>
+        Subtracts 2 from n and returns the result, over and over again,</br>
+        until n is either 0 or 1, and returns true or false.
+        <script>
+            function isEven(n) {
+              console.log(n);
+              if (n == 0)
+                return true;
+              else if (n == 1)
+                return false;
+              else if (n < 0)
+                return isEven(-n);
+              else
+                return isEven(n - 2);
+            }
+
+  //          console.log(isEven(50));
+//       console.log(isEven(75));
+            console.log(isEven(-1));
+        </script>
+    </body>
+</html>

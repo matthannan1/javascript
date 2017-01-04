@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Date & Array</title>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<h1>Date & Array</h1>
+		<script>
+                    var now = new Date();
+                    var dateString = now.toString();
+                    var theYear = now.getFullYear();
+                    var theDayOfWeek = now.getDay();
+                    
+                    document.write(dateString + "<br/>");
+                    document.write("Year: "+theYear + "<br/>");
+                    document.write("Day of Week: "+theDayOfWeek + "<br/>");
+                    document.write("<hr/>");
+                    
+                    
+                    var oddNumbers = new Array(3);
+                    oddNumbers[0]=1;
+                    oddNumbers[1]=3;
+                    oddNumbers[2]=5;
+                    
+                    document.write(oddNumbers[0] + " " + oddNumbers[1] + " " + oddNumbers[2] + "<br/>");
+                    oddNumbers.reverse();
+                    var aString = oddNumbers.join(" - ");
+                    var areAllOdd = oddNumbers.every(function(x) {
+                        return ((x % 2) !== 0);
+                    });
+                    document.write(aString + "<br/>");
+                    document.write(areAllOdd + "<br/>");
+                    document.write("<hr/>");
+                    
+                    document.write(Math.typeof);
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+		</script>
+	</body>
+</html>
